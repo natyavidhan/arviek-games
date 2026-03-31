@@ -7,7 +7,7 @@ import styles from '../styles/GamePage.module.css';
 
 // Function to generate metadata dynamically
 export async function generateMetadata({ params }) {
-    const slug = params.slug;
+    const { slug } = await params;
     let gameName = "Game"; // Default title
     let gameDescription = "Play exciting games on Arvie K Games."; // Default description
     let gameImage = "/default-game-image.png"; // Default image (replace with your actual default image path)
@@ -129,7 +129,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
-    const slug = params.slug;
+    const { slug } = await params;
 
     // Fetch all games data
     let gameData = null; // Store the raw game object found
